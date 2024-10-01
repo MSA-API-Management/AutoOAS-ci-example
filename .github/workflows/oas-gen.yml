@@ -14,5 +14,6 @@ jobs:
       volumes:
         - ${{ vars.MVN_SRC_DIR }}:/project
       options: /project /project/target/docker-output/oas
-      
-        
+    steps:
+      - name: ""
+        run: echo /project/target/docker-output/oas
