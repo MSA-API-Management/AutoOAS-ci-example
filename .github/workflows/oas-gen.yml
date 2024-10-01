@@ -4,18 +4,15 @@ on:
   push:
     branches: 
       - main
-
 jobs:
   oas-gen:
-    env: 
-      MVN_SRC_DIR: "."
     runs-on: ubuntu-latest
     outputs:
       generated: ${{ steps.proc_out.outputs }}
     container: 
       image: alexx882/oas-gen:1.0
       volumes:
-        - ${{ env.MVN_SRC_DIR }}:/project
+        - ${{ vars.MVN_SRC_DIR }}:/project
     steps:
       - name: 'Start OAS-gen tool'
         run: java -jar /app/oas-gen.jar /project /project/target/docker-output/oas
