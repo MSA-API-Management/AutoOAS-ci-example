@@ -16,7 +16,7 @@ jobs:
     container: 
       image: alexx882/oas-gen:1.0
       volumes:
-        - "$MVN_DIR:/project"
+        - "$MVN_SRC_DIR:/project"
     steps:
       - name: 'Start OAS-gen tool'
         run: java -jar /app/oas-gen.jar /project /project/target/docker-output/oas
