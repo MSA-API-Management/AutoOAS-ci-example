@@ -5,11 +5,10 @@ on:
     branches: 
       - main
 
-env:
-  MVN_SRC_DIR: "."
-
 jobs:
   oas-gen:
+    env: 
+      MVN_SRC_DIR: "."
     runs-on: ubuntu-latest
     outputs:
       generated: ${{ steps.proc_out.outputs }}
