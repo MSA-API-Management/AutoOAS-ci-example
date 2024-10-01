@@ -1,0 +1,27 @@
+name: 'OAS-gen GitHub Action'
+
+on:
+  push:
+    branches: 
+      - main
+
+env:
+  MVN_SRC_DIR: "."
+
+jobs:
+  oas-gen:
+    runs-on: ubuntu-latest
+    outputs:
+      generated: ${{steps.proc_out.outputs}}
+    container: 
+      image: alexx882/oas-gen:1.0
+      volumes:
+        - "$MVN_DIR:/project"
+    steps:
+      - name: 'Start OAS-gen tool'
+        run: java -jar /app/oas-gen.jar /project /project/target/docker-output/oas
+      - name: 'Process output'
+        id: proc_out
+        run: cat /project/target/docker-output/oas* >> "$GITHUB_OUTPUT"
+      
+        
