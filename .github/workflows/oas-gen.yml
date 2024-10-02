@@ -7,12 +7,19 @@ jobs:
   oas-gen:
     runs-on: ubuntu-latest
     outputs:
-      oas_file: ${{steps.proc_out.outputs.oas_file_path}}
+      oas_file_path: ${{steps.proc_out.outputs.oas_file_path}}
     steps:
       - uses: actions/checkout@v4
       - name: 'Run OAS-Gen tool on MVN src folder'
         run: docker run -v ${{env.MVN_SRC_DIR}}:/project alexx882/oas-gen:1.0 /project /project/target/docker/out/oas
       - id: proc_out
         name: 'Process output file'
-        run: echo "oas_file_path=$(pwd)/target/docker/out/oas" >> "$GITHUB_OUTPUT"
+        run: echo "oas_file_path=$(pwd)/target/docker/out/oas_default.json" >> "$GITHUB_OUTPUT"
+  sample-job:
+    runs-on: ubuntu-latest
+    needs: oas-gen
+    steps:
+      - run: cat ${{needs.oas-gen.outputs.oas_file_path}}
+    
+    
           
