@@ -1,16 +1,17 @@
 on: push
 
 env:
-  MVN_SRC_DIR: '.'
-
+  MVN_SRC_DIR: '.' 
+  
 jobs:
   oas-gen:
     runs-on: ubuntu-latest
     outputs:
       oas_file: ${{steps.proc_out.outputs}}
     steps:
-      - name: 'Show info'
-        run: pwd; ls -al
+      - uses: actions/checkout@v4
+        with:
+            path: main  
       - name: 'Run OAS-Gen tool on MVN src folder'
         run: docker run -v ${{env.MVN_SRC_DIR}}:/project alexx882/oas-gen:1.0 /project /project/target/docker/out/oas
       - id: proc_out
