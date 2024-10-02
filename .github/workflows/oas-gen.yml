@@ -5,7 +5,7 @@ env:
 
 jobs:
   oas-gen:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     outputs:
       oas_file: ${{steps.proc_out.outputs}}
     steps:
