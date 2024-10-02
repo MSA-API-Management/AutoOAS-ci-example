@@ -6,11 +6,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: oas-gen
-        uses: Clemi2806/oas-gen@6fb0e7f25c91a626ad04a54966681e8fd723bcd7
+        uses: Clemi2806/oas-gen@a7ea696c47f2378aabd832280e35f7679d567c87
         with: 
           mvn_src_path: ${{github.workspace}}
-      - name: 'Process output file'
-        run: cat ${{steps.oas-gen.outputs.path_to_oas}}
     
     
           
