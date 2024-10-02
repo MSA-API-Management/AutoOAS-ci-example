@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: oas-gen
-        uses: Clemi2806/oas-gen@46dbebb7e4ade418bc3a15e8b8dd72ff43553d06
+        uses: Clemi2806/oas-gen@4383764d12c5aee14aaf5c23cda1b4af70032aeb
         with: 
           mvn_src_path: ""
       - name: 'Process output file'
