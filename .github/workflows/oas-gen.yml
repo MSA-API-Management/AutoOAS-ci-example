@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: oas-gen
-        uses: Clemi2806/oas-gen@6b1f0101c3d8a2d4ca7735d24f04ba16bd1a4efd
+        uses: Clemi2806/oas-gen@6fb0e7f25c91a626ad04a54966681e8fd723bcd7
         with: 
           mvn_src_path: ${{github.workspace}}
       - name: 'Process output file'
