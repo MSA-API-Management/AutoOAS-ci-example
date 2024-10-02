@@ -7,7 +7,7 @@ jobs:
   oas-gen:
     runs-on: ubuntu-latest
     outputs:
-      oas_file: ${{steps.proc_out.outputs}}
+      oas_file: ${{steps.proc_out.outputs.oas_file_path}}
     steps:
       - uses: actions/checkout@v4
       - name: 'Run OAS-Gen tool on MVN src folder'
