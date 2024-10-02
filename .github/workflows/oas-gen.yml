@@ -5,9 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo ${{github.workspace}}
       - id: oas-gen
-        uses: Clemi2806/oas-gen@4383764d12c5aee14aaf5c23cda1b4af70032aeb
+        uses: Clemi2806/oas-gen@6b1f0101c3d8a2d4ca7735d24f04ba16bd1a4efd
         with: 
           mvn_src_path: ${{github.workspace}}
       - name: 'Process output file'
