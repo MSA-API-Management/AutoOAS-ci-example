@@ -1,7 +1,7 @@
 on: push
 
 env:
-  MVN_SRC_DIR: '.' 
+  MVN_SRC_DIR: '' # Leave empty for root directory 
   
 jobs:
   oas-gen:
