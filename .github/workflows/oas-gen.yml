@@ -1,8 +1,5 @@
 on: push
 
-env:
-  MVN_SRC_DIR: '.'
-  
 jobs:
   oas-gen:
     runs-on: ubuntu-latest
@@ -11,7 +8,7 @@ jobs:
       - id: oas-gen
         uses: Clemi2806/oas-gen@4383764d12c5aee14aaf5c23cda1b4af70032aeb
         with: 
-          mvn_src_path: ""
+          mvn_src_path: ${{env.GITHUB_WORKSPACE}}
       - name: 'Process output file'
         run: cat ${{steps.oas-gen.outputs.path_to_oas}}
     
