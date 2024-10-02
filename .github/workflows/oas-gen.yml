@@ -10,8 +10,6 @@ jobs:
       oas_file: ${{steps.proc_out.outputs}}
     steps:
       - uses: actions/checkout@v4
-        with:
-            path: main  
       - name: 'Show info'
         run: ls -al ${{env.GITHUB_WORKSPACE}}
       - name: 'Run OAS-Gen tool on MVN src folder'
