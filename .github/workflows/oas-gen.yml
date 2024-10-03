@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: oas-gen
-        uses: Clemi2806/oas-gen@v1
+        uses: API-Evolution-Management/oas-gen@v1
         with: 
           mvn_src_path: ${{github.workspace}}
     
