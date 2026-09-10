@@ -9,12 +9,12 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>at.aau.serg</groupId>
-    <artifactId>simple-spring-project</artifactId>
+    <artifactId>AutoOAS-ci-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>simple-spring-project</name>
+    <name>AutoOAS-ci-example</name>
     <description>A simple Spring project used to showcase a few possibilities for REST endpoints</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
     </properties>
 
     <dependencies>
