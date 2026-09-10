@@ -1,0 +1,11 @@
+on: push
+
+jobs:
+  auto-oas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4 # Use checkout action to fetch project files
+      - uses: MSA-API-Management/AutoOAS-action@v1.2
+        with:
+          # Path to the source directory
+          source_dir: ${{github.workspace}}
